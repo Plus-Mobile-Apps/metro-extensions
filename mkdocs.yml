@@ -1,0 +1,38 @@
+site_name: Metro Extensions
+site_description: Extensions on top of Metro DI to reduce boilerplate.
+site_url: https://plusmobileapps.com/metro-extensions/
+repo_url: https://github.com/plusmobileapps/metro-extensions
+
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - content.code.copy
+  palette:
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to system preference
+
+plugins:
+  - search
+
+markdown_extensions:
+  - md_in_html
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences
+
+nav:
+  - Overview: index.md
+  - Assisted Factory: assisted-factory.md

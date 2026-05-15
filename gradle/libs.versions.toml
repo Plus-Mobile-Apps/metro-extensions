@@ -1,0 +1,36 @@
+[versions]
+agp = "8.13.2"
+android-compileSdk = "35"
+android-minSdk = "24"
+autoservice = "1.1.1"
+autoservice-ksp = "1.2.0"
+junit-jupiter = "5.12.1"
+kotest = "5.9.1"
+kotlin = "2.3.21"
+kotlin-compile-testing = "0.8.0"
+kotlin-poet = "2.2.0"
+ksp = "2.3.8"
+metro = "1.1.1"
+
+[libraries]
+auto-service-annotations = { module = "com.google.auto.service:auto-service-annotations", version.ref = "autoservice" }
+auto-service-ksp = { module = "dev.zacsweers.autoservice:auto-service-ksp", version.ref = "autoservice-ksp" }
+junit-jupiter-bom = { module = "org.junit:junit-bom", version.ref = "junit-jupiter" }
+junit-jupiter-core = { module = "org.junit.jupiter:junit-jupiter" }
+junit-jupiter-launcher = { module = "org.junit.platform:junit-platform-launcher" }
+kotest-assertions-core = { module = "io.kotest:kotest-assertions-core", version.ref = "kotest" }
+kotest-runner-junit5 = { module = "io.kotest:kotest-runner-junit5", version.ref = "kotest" }
+kotlin-compile-testing-core = { module = "dev.zacsweers.kctfork:core", version.ref = "kotlin-compile-testing" }
+kotlin-compile-testing-ksp = { module = "dev.zacsweers.kctfork:ksp", version.ref = "kotlin-compile-testing" }
+kotlin-poet = { module = "com.squareup:kotlinpoet", version.ref = "kotlin-poet" }
+kotlin-poet-ksp = { module = "com.squareup:kotlinpoet-ksp", version.ref = "kotlin-poet" }
+kotlin-reflect = { module = "org.jetbrains.kotlin:kotlin-reflect", version.ref = "kotlin" }
+ksp-api = { module = "com.google.devtools.ksp:symbol-processing-api", version.ref = "ksp" }
+metro-runtime = { module = "dev.zacsweers.metro:runtime", version.ref = "metro" }
+
+[plugins]
+androidLibrary = { id = "com.android.library", version.ref = "agp" }
+jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+metro = { id = "dev.zacsweers.metro", version.ref = "metro" }
