@@ -136,3 +136,18 @@ public class <Source>(
 ```
 
 The `<Source>` name is derived from the source class's fully-qualified name so generated types do not collide across packages.
+
+## In the wild
+
+The assisted-factory extension was first adopted at scale in [Plus-Mobile-Apps/chef-mate#178](https://github.com/Plus-Mobile-Apps/chef-mate/pull/178), which migrated the app's BLoC factory wiring from hand-written bridge classes to `@ContributesAssistedFactory`.
+
+| Metric                                | Result                            |
+| ------------------------------------- | --------------------------------- |
+| Files changed                         | 30                                |
+| Lines removed                         | 563                               |
+| Lines added                           | 128                               |
+| Net boilerplate removed               | **−435 LOC**                      |
+| Android `assembleDebug` (warm daemon) | ~16s → ~17s (+1s, +20 KSP tasks)  |
+| Cold-daemon / CI overhead             | ~5s one-time                      |
+
+KSP2's reuse of the K2 frontend means the additional processor pass is parasitic on the existing `kotlinc` invocation, and the reduction in hand-written source roughly offsets the small KSP cost. The net build-time impact is within run-to-run variance on a warm daemon.
