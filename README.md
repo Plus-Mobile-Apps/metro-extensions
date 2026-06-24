@@ -5,6 +5,7 @@ A collection of extensions on top of [Metro DI](https://github.com/ZacSweers/met
 ## Extensions
 
 * [Assisted Factory](https://plusmobileapps.com/metro-extensions/assisted-factory/) — bind a user-defined factory interface to an `@AssistedInject` class with a single annotation.
+* [Dependency Graph](https://plusmobileapps.com/metro-extensions/dependency-graph/) — generate a `@DependencyGraph` and a `create…()` accessor from a plain marker interface.
 
 ## How it works
 
