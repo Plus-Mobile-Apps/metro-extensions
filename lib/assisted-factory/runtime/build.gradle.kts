@@ -1,10 +1,10 @@
 import com.vanniktech.maven.publish.SonatypeHost
-import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
-    alias(libs.plugins.androidLibrary)
+    alias(libs.plugins.androidKmpLibrary)
+    alias(libs.plugins.androidLint)
     alias(libs.plugins.mavenPublish)
 }
 
@@ -13,8 +13,10 @@ kotlin {
 
     jvm()
 
-    androidTarget {
-        @OptIn(ExperimentalKotlinGradlePluginApi::class)
+    android {
+        namespace = "com.plusmobileapps.metro.extensions.assistedfactory.runtime"
+        compileSdk = libs.versions.android.compileSdk.get().toInt()
+        minSdk = libs.versions.android.minSdk.get().toInt()
         compilerOptions {
             jvmTarget.set(JvmTarget.JVM_11)
         }
@@ -33,18 +35,6 @@ kotlin {
     tvosSimulatorArm64()
 
     applyDefaultHierarchyTemplate()
-}
-
-android {
-    namespace = "com.plusmobileapps.metro.extensions.assistedfactory.runtime"
-    compileSdk = libs.versions.android.compileSdk.get().toInt()
-    defaultConfig {
-        minSdk = libs.versions.android.minSdk.get().toInt()
-    }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
-    }
 }
 
 mavenPublishing {
