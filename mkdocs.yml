@@ -36,3 +36,4 @@ markdown_extensions:
 nav:
   - Overview: index.md
   - Assisted Factory: assisted-factory.md
+  - Dependency Graph: dependency-graph.md

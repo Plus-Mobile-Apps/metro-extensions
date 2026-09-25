@@ -30,3 +30,6 @@ dependencyResolutionManagement {
 include(":lib:assisted-factory:runtime")
 include(":lib:assisted-factory:compiler")
 include(":samples:assisted-factory")
+include(":lib:dependency-graph:runtime")
+include(":lib:dependency-graph:compiler")
+include(":samples:dependency-graph")
