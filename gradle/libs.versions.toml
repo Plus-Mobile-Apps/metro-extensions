@@ -7,12 +7,12 @@ autoservice = "1.1.1"
 autoservice-ksp = "1.2.0"
 junit-jupiter = "5.12.1"
 kotest = "5.9.1"
-kotlin = "2.3.21"
-kotlin-compile-testing = "0.8.0"
+kotlin = "2.4.20"
+kotlin-compile-testing = "0.14.0"
 kotlin-poet = "2.2.0"
-ksp = "2.3.8"
+ksp = "2.3.12"
 maven-publish = "0.31.0"
-metro = "1.1.1"
+metro = "1.4.5"
 
 [libraries]
 auto-service-annotations = { module = "com.google.auto.service:auto-service-annotations", version.ref = "autoservice" }

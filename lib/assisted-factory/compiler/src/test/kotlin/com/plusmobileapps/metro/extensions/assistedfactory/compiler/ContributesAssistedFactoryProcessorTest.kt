@@ -151,7 +151,7 @@ class ContributesAssistedFactoryProcessorTest {
             verbose = false
             messageOutputStream = System.out
             sources = listOf(SourceFile.kotlin("Source.kt", source))
-            configureKsp(useKsp2 = true) {
+            configureKsp {
                 symbolProcessorProviders += ContributesAssistedFactoryProcessor.Provider()
             }
         }
