@@ -1,5 +1,5 @@
 [versions]
-agp = "8.13.2"
+agp = "9.4.1"
 android-compileSdk = "35"
 android-minSdk = "24"
 assistedFactory = "0.1.0"
@@ -7,12 +7,12 @@ autoservice = "1.1.1"
 autoservice-ksp = "1.2.0"
 junit-jupiter = "5.12.1"
 kotest = "5.9.1"
-kotlin = "2.3.21"
-kotlin-compile-testing = "0.8.0"
+kotlin = "2.4.20"
+kotlin-compile-testing = "0.14.0"
 kotlin-poet = "2.2.0"
-ksp = "2.3.8"
+ksp = "2.3.12"
 maven-publish = "0.31.0"
-metro = "1.1.1"
+metro = "1.4.5"
 
 [libraries]
 auto-service-annotations = { module = "com.google.auto.service:auto-service-annotations", version.ref = "autoservice" }
@@ -31,7 +31,8 @@ ksp-api = { module = "com.google.devtools.ksp:symbol-processing-api", version.re
 metro-runtime = { module = "dev.zacsweers.metro:runtime", version.ref = "metro" }
 
 [plugins]
-androidLibrary = { id = "com.android.library", version.ref = "agp" }
+androidKmpLibrary = { id = "com.android.kotlin.multiplatform.library", version.ref = "agp" }
+androidLint = { id = "com.android.lint", version.ref = "agp" }
 jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
